@@ -27,19 +27,6 @@ Evaluar los conocimientos del candidato en relación con la posición de Data An
   - Listado de todos los business existentes, con la cantidad de business_product de tipo invoice advance activos creados en 2021 y 2022; siempre y cuando haya tenido al menos 1 por cada año, de lo contrario mostrar 0.
   - Listado de TODOS los business_product de tipo Invoice Advance que NO tengan invoice_advance o que los que tiene sean todos rejected. Solo considerar los invoice advance en USD.
 
-## Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-## Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
-
 ```
 $PROJECT_ROOT
 │   
