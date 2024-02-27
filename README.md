@@ -26,6 +26,14 @@ Evaluar los conocimientos del candidato en relación con la posición de Data An
   - Se desea obtener el issuer_rfc que no haya emitido invoices de tipo I durante 3 meses consecutivos o más en los últimos 24 meses, junto con los meses consecutivos en los cuales eso sucedió.
   - Listado de todos los business existentes, con la cantidad de business_product de tipo invoice advance activos creados en 2021 y 2022; siempre y cuando haya tenido al menos 1 por cada año, de lo contrario mostrar 0.
   - Listado de TODOS los business_product de tipo Invoice Advance que NO tengan invoice_advance o que los que tiene sean todos rejected. Solo considerar los invoice advance en USD.
+ 
+## Entregable
+
+- Subir a un repositorio de gitHub, o enviar un archivo comprimido con lo siguiente:
+  - Proyecto de DBT con lo necesario para que se pueda reproducir.
+  - Power BI Desktop file (.pbix) con los gráficos y las queries del último punto.
+- Un listado de las consideraciones que se tuvieron en cuenta a la hora de modelar, en caso de que se crea conveniente remarcar alguna.
+- Listado de cosas que se hubiesen hecho en caso de contar con más tiempo.
 
 ```
 $PROJECT_ROOT
