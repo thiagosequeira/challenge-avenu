@@ -46,48 +46,48 @@ GROUP BY
 SELECT
     business_id,
     SUM(effective_advance) AS monto_adelantos,
-    DATE_PART('dow', advance_date) AS business_day, -- (LUNES = 1, SABADO = 6, DOMINGO = 7)
+    DATE_PART('dow', advance_date) AS business_day, -- (LUNES = 1, SABADO = 6, DOMINGO = 0)
     WEEK(advance_date) week,
-    YEAR(advance_date) year
+    MONTH(advance_date) month
 FROM
     MY_DB.MY_SCHEMA_REPLICA_PROD.INVOICE_ADVANCE
 WHERE 
     advance_date IS NOT NULL
     AND state <> 'rejected'
 GROUP BY
-    business_id, business_day, week, year;
+    business_id, business_day, week, month;
 
 -- b)
 
 SELECT
     business_id,
     SUM(effective_collection) AS dinero_devuelto,
-    DATE_PART('dow', advance_date) AS business_day, -- (LUNES = 1, SABADO = 6, DOMINGO = 7)
+    DATE_PART('dow', advance_date) AS business_day, -- (LUNES = 1, SABADO = 6, DOMINGO = 0)
     WEEK(advance_date) week,
-    YEAR(advance_date) year
+    MONTH(advance_date) month
 FROM
     MY_DB.MY_SCHEMA_REPLICA_PROD.INVOICE_ADVANCE
 WHERE
     state != 'rejected'
     AND advance_date IS NOT NULL
 GROUP BY
-    business_id, business_day, week, year;
+    business_id, business_day, week, month;
 
 -- c)
 
 SELECT
     business_id,
     SUM(fee_at_due) AS monto_debido,
-    DATE_PART('dow', due_date) AS business_day, -- (LUNES = 1, SABADO = 6, DOMINGO = 7)
+    DATE_PART('dow', due_date) AS business_day, -- (LUNES = 1, SABADO = 6, DOMINGO = 0)
     WEEK(due_date) week,
-    YEAR(due_date) year
+    MONTH(due_date) month
 FROM
     MY_DB.MY_SCHEMA_REPLICA_PROD.INVOICE_ADVANCE
 WHERE
     due_date IS NOT NULL
     AND state != 'rejected'
 GROUP BY
-    business_id, business_day, week, year;
+    business_id, business_day, week, month;
 
 -- Requerimiento 5 
 
@@ -107,11 +107,12 @@ SELECT
     type,
     receiver_name,
     SUM(total) AS total_amount,
+    DAY(issued_at) day,
     WEEK(issued_at) week,
-    YEAR(issued_at) year
+    MONTH(issued_at) month
 FROM
     MY_DB.MY_SCHEMA_REPLICA_PROD.INVOICES
 WHERE
     status = 'VIGENTE'
 GROUP BY
-    type, receiver_name, week, year;
+    type, receiver_name, day, week, month;
