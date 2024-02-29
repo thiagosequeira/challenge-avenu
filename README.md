@@ -51,6 +51,6 @@ $PROJECT_ROOT
 └── tests
 
 ── .PBIX Power BI Dashboard
-── .MD "Consideraciones" y raciocineo al encarar el challenge.
+── .MD "Consideraciones" y raciocinio al encarar el challenge.
 ── .MD "Listado" de cosas que se hubiesen hecho en caso de contar con más tiempo.
 ```
