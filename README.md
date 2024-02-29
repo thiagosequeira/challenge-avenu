@@ -52,5 +52,5 @@ $PROJECT_ROOT
 
 ── .PBIX Power BI Dashboard
 ── .MD "Consideraciones" y raciocineo al encarar el challenge.
-── .MD "Listado" de cosas que se hubiesen hecho en caso de contar con más tiempo, o que aplicaría en un futuro.
+── .MD "Listado" de cosas que se hubiesen hecho en caso de contar con más tiempo.
 ```
